@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -40,4 +42,19 @@ public class Carro {
 	
 	private String tipo;
 	
+	private String descricao;
+	
+	private String url_foto;
+	
+	private String url_video;
+	
+	private String latitude;
+	
+	private String longitude;
+	public static void main(String[] args) {
+		BCryptPasswordEncoder teste = new BCryptPasswordEncoder();
+		System.out.println(teste.encode("joao123"));
+		System.out.println(teste.encode("camilla123"));
+		System.out.println(teste.encode("admin123"));
+	}
 }
